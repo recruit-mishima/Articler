@@ -1,7 +1,11 @@
+
 <% if @articles.present? %>
   <% @articles.each do |article| %>
     "<%= article.title %>"
     by <%= article.author %>
     , <%= article.date %>
+    <br/>
+    <%= link_to '♡', "/articler/:id/", method: :get %>
+      <br/>
   <% end %>
 <% end %>
