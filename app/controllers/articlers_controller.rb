@@ -1,4 +1,4 @@
-class ArticlerController < ApplicationController
+class ArticlersController < ApplicationController
   def top
   end
   def search
@@ -12,8 +12,8 @@ class ArticlerController < ApplicationController
    @articles = Article.where('title LIKE(?)', "%#{params[:title]}%").order("date DESC")
   end
   def show
-    binding.pry
-    @articler = Article.find(params[:id])
+    # binding.pry
+    @article = Article.find(params[:id])
   end
 
 

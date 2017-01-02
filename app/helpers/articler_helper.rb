@@ -1,2 +1,0 @@
-module ArticlerHelper
-end

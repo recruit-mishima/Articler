@@ -5,7 +5,7 @@
     by <%= article.author %>
     , <%= article.date %>
     <br/>
-    <%= link_to '♡', "/articler/:id/", method: :get %>
+    <%= link_to '♡', articler_path(article) %>
       <br/>
   <% end %>
 <% end %>

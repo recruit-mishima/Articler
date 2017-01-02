@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'articler' => 'articler#top'
-  get 'articler/search' => 'articler#search'#top page
-  get 'articler/:keyword' => 'articler#index'
-  get 'articler/:id' => 'articler#show'
+  root 'articlers#top'
+  get 'articlers' => 'articlers#top'
+  get 'articlers/search' => 'articlers#search'#top page
+  resources :articlers, only: [:show]
+  # get 'articlers/:keyword' => 'articlers#index'
 end
