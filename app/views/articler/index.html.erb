@@ -1,0 +1,7 @@
+<% if @articles.present? %>
+  <% @articles.each do |article| %>
+    "<%= article.title %>"
+    by <%= article.author %>
+    , <%= article.date %>
+  <% end %>
+<% end %>

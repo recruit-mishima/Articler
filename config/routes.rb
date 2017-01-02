@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'articler' => 'articler#top' #top page
-  # search 'articler' => 'articler#search'
-end
+  get 'articler' => 'articler#top'
+  get 'articler/search' => 'articler#search'#top page
+  get 'articler/:keyword' => 'articler#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
