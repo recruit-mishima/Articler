@@ -1,4 +1,5 @@
 class ArticlersController < ApplicationController
+  before_action :move_to_top, except: :top
   def top
   end
   def search
@@ -15,6 +16,24 @@ class ArticlersController < ApplicationController
     # binding.pry
     @article = Article.find(params[:id])
   end
+
+  # def create 
+  #   Comment.user(comment_params[:text], user_id: current_user.id)
+  # end
+
+  # def show
+  #   @favourites = Favourite.find(params[:id])
+  # end
+
+  private
+    def comment_params
+      params.permit(:text)
+    end
+
+  def move_to_top
+      redirect_to action: :top unless user_signed_in?
+  end
+
 
 
 end
