@@ -13,12 +13,12 @@
     Comment
    </h3>
 
-   <%= form_for [@article, @favourite], url: articler_favourites_create_path do |f|  %>
+   <%= form_for [@article, @favourite], url: article_favourites_create_path do |f|  %>
    <div>
     <%= f.text_area :favourite, placeholder: 'Any Comment?' %>
    </div>
    <<div>
-     <%= f.submit '♡'%>
+     <%= f.submit '♡' %>
    </div>>
     <% end %>
 

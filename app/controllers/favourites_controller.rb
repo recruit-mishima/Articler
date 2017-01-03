@@ -6,7 +6,7 @@ class FavouritesController < ApplicationController
     binding.pry
     Favourite.create(user_id: current_user.id, article_id: params[:article_id], comment: params[:comment])
 
-    redirect_to controller: :articlers, action: :show
+    redirect_to controller: :articles, action: :show
   end
 
 

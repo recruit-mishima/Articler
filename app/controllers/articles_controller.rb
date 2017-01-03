@@ -1,4 +1,4 @@
-class ArticlersController < ApplicationController
+class ArticlesController < ApplicationController
   before_action :move_to_top, except: :top
   def top
   end
