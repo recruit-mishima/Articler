@@ -13,17 +13,13 @@ class ArticlersController < ApplicationController
    @articles = Article.where('title LIKE(?)', "%#{params[:title]}%").order("date DESC")
   end
   def show
-    # binding.pry
+    @user = current_user
     @article = Article.find(params[:id])
+    @favourite = Favourite.new(article_id: @article.id)
   end
 
-  # def create 
-  #   Comment.user(comment_params[:text], user_id: current_user.id)
-  # end
 
-  # def show
-  #   @favourites = Favourite.find(params[:id])
-  # end
+
 
   private
     def comment_params
