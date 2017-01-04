@@ -1,8 +1,9 @@
-<div class="contents row" >
-    <p><%= @username %>'s favourites</p>
-    <% @articles.each do |article| %>
-        <%= simple_format(article.text) %>
-      </div>
-    <% end %>
-<!--     <%= paginate(@tweets) %> -->
-  </div>
+<ul>
+<% @favourites.each do |favourite| %>
+<li>
+<%= favourite.id %>
+<%= link_to "#{favourite.article.title}", "/articles/#{favourite.article.id}" %>
+</li>
+<% end  %>
+
+</ul>

@@ -1,11 +1,32 @@
 
-<% if @articles.present? %>
-  <% @articles.each do |article| %>
-    "<%= article.title %>"
-    by <%= article.author %>
-    , <%= article.date %>
-    <br/>
-    <%= link_to '♡', article_path(article) %>
-      <br/>
-  <% end %>
-<% end %>
+
+
+<div class="contents row">
+  <%= form_tag('/articles/search', method: :get ) do %>
+  <div>
+    <h1>
+      Keyword
+    </h1>
+      <div>
+        <input placeholder="Keyword1" type="text" name="title">
+      </div>
+      <div>
+        <input placeholder="Keyword2" type="text" name="title">
+      </div>
+      <!-- <div>
+        <input placeholder="Keyword3" type="text" name="title"> </input>
+      </div>
+    <h2>
+      Date
+    </h2>
+      <div>
+        <input placeholder="Year1" type="text"></input>~<input placeholder="Year2" type="text"></input>
+      </div> -->
+      <div>
+        <input type="submit" value="Search">
+
+      </div>
+    <% end %>
+  </div>
+
+

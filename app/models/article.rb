@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
-  has_many :comments
-  has_many :users, :through => :favourites
+  has_many :favourites
+  has_many :users, through: :favourites
+  # belongs_to :user, :through => :favourites
 end

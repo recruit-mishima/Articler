@@ -13,12 +13,28 @@
     Comment
    </h3>
 
-   <%= form_for [@article, @favourite], url: article_favourites_create_path do |f|  %>
-   <div>
-    <%= f.text_area :favourite, placeholder: 'Any Comment?' %>
-   </div>
-   <<div>
-     <%= f.submit '♡' %>
-   </div>>
+   <% if @myfavourite %>
+    <div>
+      <%= form_for [@article, @myfavourite] do |f|  %>
+    <div>
+     <%= f.text_area :comment, placeholder: '' %>
+    </div>
+    <div>
+     <%= f.submit 'Update' %>
+    </div>
     <% end %>
+    </div>
+    <div>
+    </div>
+     <%= link_to "Delete", article_favourite_path(article_id: @article.id, id: @myfavourite.id), method: :delete %>
 
+   <% else %>
+    <%= form_for [@article, @favourite] do |f|  %>
+    <div>
+     <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
+    </div>
+    <div>
+     <%= f.submit '♡' %>
+    </div>
+    <% end %>
+  <% end %>
