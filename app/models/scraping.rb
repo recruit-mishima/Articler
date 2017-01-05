@@ -26,20 +26,22 @@ class Scraping
   end
 
   def self.get_article(link)
-    agent = Mechanize.new
-    current_page = agent.get(link)
-    elements = current_page.at('cite').inner_text
-    elements.gsub!(/\n/, " ")
+     agent = Mechanize.new
+     current_page = agent.get(link)
+     elements = current_page.at('cite').inner_text
+     elements.gsub!(/\n/, " ")
      author = elements.split(' (').first
      date = elements.match(/\d{4}/)[0].to_s.to_i
      title = elements.match(/\"(.+)\"/)[1]
      abstract = current_page.search('.abstract p')[1].inner_text
      abstract = abstract.scrub('')
-    begin
-    article = Article.new(title: title, author: author, date: date, abstract: abstract)
-    article.save
-    rescue
-    binding.pry
+      begin
+        article = Article.create(title: title, author: author, date: date, abstract: abstract)
+        keywords = AlchemyAPI.new.keywords("text", "#{article.abstract}")
+        keywords["keywords"].each do |keyword|
+          Keyword.create(keyword: keyword["text"], article_id: article.id)
+        end
+      rescue
     end
-    end
+  end
 end

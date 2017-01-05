@@ -15,11 +15,6 @@ class ArticlesController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  def destroy
-    @favourite = Favourite.find(params[:id])
-    @favourite.destroy if @favourite.user_id == current_user.id
-    redirect_to_users_id_path
-  end
 
   def search
     @articles = Article.search(:title_or_author_cont => " ").result
