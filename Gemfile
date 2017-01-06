@@ -50,3 +50,4 @@ end
  gem 'kaminari'
  gem 'ransack'
  gem 'devise'
+ gem 'font-awesome-rails'

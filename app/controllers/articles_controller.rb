@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :move_to_top, except: :top
+  before_action :move_to_index, except: :index
 
   def index
   end
@@ -26,8 +26,8 @@ class ArticlesController < ApplicationController
     params.permit(:text)
   end
 
-  def move_to_top
-    redirect_to action: :top unless user_signed_in?
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
 

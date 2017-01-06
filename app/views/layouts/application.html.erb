@@ -6,21 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
-<header class="header">
-    <div class="header__bar row">
-      <h1 class="grid-6"><a href="/">Articler</a></h1>
+ <body>
+  <header class="header">
+    <div class="header_bar clearfix">
+      <div class="home">
+        <a href="/"><i class="fa fa-home fa-5x" aria-hidden="true"></i></a>
+      </div>
+      <div class="heading">Articler</div>
       <% if user_signed_in? %>
       <div class="user_nav grid-6">
-      <span><%= current_user.username %>
+    <!--   <span><%= current_user.username %> -->
          <ul class="user__info">
            <li>
              <a href="/users/<%= current_user.id %>">My page</a>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
            </li>
           </ul>
-      </span>
-          <a class="search" href="/top">Search Articles</a>
+     <!--  </span> -->
+<!--           <a class="search" href="/top">Search Articles</a> -->
         </div>
       <% else %>
         <div class="grid-6">
@@ -30,9 +33,6 @@
       <% end %>
     </div>
   </header>
-<body>
-
-<%= yield %>
-
-</body>
+  <%= yield %>
+ </body>
 </html>

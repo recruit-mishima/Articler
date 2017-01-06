@@ -1,6 +1,6 @@
 
 <!-- puts Article.find(params[:id]) -->
-
+<div class="wrapper">
     <%= @article.title %>
     <%= @article.author %>
     <%= @article.date %>
@@ -8,33 +8,69 @@
    <h3>
     Abstract
    </h3>
-    <%= @article.abstract %>
-   <h3>
-    Comment
-   </h3>
+   <div class="article-abstract">
+      <%= @article.abstract %>
+    </div>
+</div>
 
-   <% if @myfavourite %>
-    <div>
-      <%= form_for [@article, @myfavourite] do |f|  %>
-    <div>
-     <%= f.text_area :comment, placeholder: '' %>
-    </div>
-    <div>
-     <%= f.submit 'Update' %>
-    </div>
-    <% end %>
-    </div>
-    <div>
-    </div>
-     <%= link_to "Delete", article_favourite_path(article_id: @article.id, id: @myfavourite.id), method: :delete %>
 
-   <% else %>
-    <%= form_for [@article, @favourite] do |f|  %>
-    <div>
-     <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
+    <a class="open-modal" href="#hello">hello dialog</a>
+    <div id="hello" class="modal-dialog disapper">
+     <div class="message-box">
+      <h1>Hello World</h1>
+      <a class="close-modal" href="#close">Close</a>
+     </div>
     </div>
-    <div>
-     <%= f.submit '♡' %>
+<!-- 
+ <a class="modal" href="#modal-open">POPUP</a>
+<div id="modal-open" class="modal-dialog">
+  <% if @myfavourite %>
+    <div class="modal-content1">
+      <div class="modal-header1">
+       <h3>
+        Comment
+       </h3>
+       </div>
+       <div>
+         <a class="close-modal" href="#close"> × close </a>
+       </div>
+
+      <div class="modal-body1">
+       <%= form_for [@article, @myfavourite] do |f|  %>
+          <%= f.text_area :comment, placeholder: '' %>
+      </div>
+      <div class="modal-footer">
+         <div class="update-click">
+         <%= f.submit 'Update' %>
+         </div>
+       <% end %>
+        <div class="delete-click">
+         <%= link_to "Delete", article_favourite_path(article_id: @article.id, id: @myfavourite.id), method: :delete %>
+        </div>
+      </div>
     </div>
-    <% end %>
-  <% end %>
+
+      <% else %>
+    <div class="modal-content2">
+        <div class="modal-header2">
+         <h3>
+          Comment
+         </h3>
+        </div>
+        <<div>
+          <a class="close-modal" href="#close"> × close </a>
+        </div>
+        <div class="modal-form2">
+         <%= form_for [@article, @favourite] do |f|  %>
+           <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
+        </div>
+         <div class="create-click">
+         <%= f.submit '♡' %>
+       </div>
+      <% end %>
+   </div>
+ </div>
+</div>
+
+
+  <% end %> -->

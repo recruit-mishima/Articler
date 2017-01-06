@@ -1,9 +1,8 @@
 <ul>
-<% @favourites.each do |favourite| %>
-<li>
-<%= favourite.id %>
-<%= link_to "#{favourite.article.title}", "/articles/#{favourite.article.id}" %>
-</li>
-<% end  %>
-
+  <% @favourites.each do |favourite| %>
+   <ol>
+    <%= favourite.id %>
+    <%= link_to "#{favourite.article.title}", "/articles/#{favourite.article.id}" %>
+   </ol>
+  <% end %>
 </ul>
