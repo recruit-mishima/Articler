@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
 
 
   def search
-    @articles = Article.search(:title_or_author_cont => " ").result
+    @articles = Article.search(:title_and_author_cont => " ").result
   end
 
   private

@@ -7,15 +7,20 @@
    <hr></hr>
   </div>
   <div class="keyword-form">
-    <div class="form">
+  <ul>
     <%= form_tag('/articles/search', method: :get ) do %>
-      <input placeholder="Keyword1" type="text" name="title">
-    </div>
-    <div class="form">
-      <input placeholder="Keyword2" type="text" name="title">
-    </div>
+    <li>
+      <input class="form" placeholder="Keyword1" type="text" name="title">
+      </li>
+      <li>
+      <input class="form" placeholder="Keyword2" type="text" name="title">
+      </li>
+      </ul>
   </div>
 </div>
+
+
+
       <!-- <div>
         <input placeholder="Keyword3" type="text" name="title"> </input>
       </div>
@@ -25,11 +30,7 @@
       <div>
         <input placeholder="Year1" type="text"></input>~<input placeholder="Year2" type="text"></input>
       </div> -->
-
-<div class="search">
-      <input type="submit" value="Search">
-</div>
-
+<input class="search" type="submit" value="Search">
     <% end %>
-  </div>
-</body>
+<div class="blank">
+</div>

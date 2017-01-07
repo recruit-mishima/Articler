@@ -1,21 +1,14 @@
-// $(function(){
-//  $('.modal-button').on('click', function(){
-//    $('.modal').css({display: 'block'});
-//  })
-// })
+$(function(){
+ $('.open-modal').on('click', function(){
+  console.log("hoge");
+   $('.modal').css({display: 'block'});
+   $('.cover-background').css({display: 'block'});
+ })
+})
 
-
-$(".open-modal").click(funciton(event){
-  event.prevnetDefault();
-  var hre = $(this).attr("href");
-  $(href).toggleClass("disappear");
-});
-
-$(".close-modal").click(funciton(event){
-  event.prevnetDefault();
-  $(".modal-dialog").hide();
-});
-
-$(".open-modal").click(function(event){
-  event.prevnetDefault();
-});
+$(function(){
+ $('.close-modal').on('click', function(){
+   $('.modal').css({display: 'none'});
+   $('.cover-background').css({display: 'none'});
+ })
+})

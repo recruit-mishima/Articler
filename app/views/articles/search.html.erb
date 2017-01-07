@@ -1,11 +1,18 @@
-
+<div class="article">
 <% if @articles.present? %>
   <% @articles.each do |article| %>
-    "<%= article.title %>"
-    by <%= article.author %>
-    , <%= article.date %>
-    <br/>
-    <%= link_to '♡', article_path(article) %>
-      <br/>
+   <p class="title"> "<%= article.title %>" </p>
+   <hr class="inline"></hr>
+   <p class="author"> <%= article.author %> </<p>
+   <span class="date"> , <%= article.date %> </span>
+    <hr class="inline"></hr>
+    <% if article.favourites.present? %>
+<%= link_to '♡', article_path(article), class: "favourited" %>
+      <hr class="next-article"></hr>
+    <% else %>
+      <%= link_to '♡', article_path(article), class: "nonfavourited" %>
+      <hr class="next-article"></hr>
+    <% end %>
   <% end %>
 <% end %>
+</div>

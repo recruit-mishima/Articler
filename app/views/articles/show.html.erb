@@ -1,6 +1,6 @@
 
 <!-- puts Article.find(params[:id]) -->
-<div class="wrapper">
+
     <%= @article.title %>
     <%= @article.author %>
     <%= @article.date %>
@@ -11,19 +11,12 @@
    <div class="article-abstract">
       <%= @article.abstract %>
     </div>
+
+<div class="cover-background">
 </div>
+      <p class="open-modal" >hello dialog</p>
 
-
-    <a class="open-modal" href="#hello">hello dialog</a>
-    <div id="hello" class="modal-dialog disapper">
-     <div class="message-box">
-      <h1>Hello World</h1>
-      <a class="close-modal" href="#close">Close</a>
-     </div>
-    </div>
-<!-- 
- <a class="modal" href="#modal-open">POPUP</a>
-<div id="modal-open" class="modal-dialog">
+ <div class="modal">
   <% if @myfavourite %>
     <div class="modal-content1">
       <div class="modal-header1">
@@ -32,7 +25,7 @@
        </h3>
        </div>
        <div>
-         <a class="close-modal" href="#close"> × close </a>
+         <p class="close-modal"> × close </p>
        </div>
 
       <div class="modal-body1">
@@ -58,7 +51,7 @@
          </h3>
         </div>
         <<div>
-          <a class="close-modal" href="#close"> × close </a>
+          <p class="close-modal"> × close </p>
         </div>
         <div class="modal-form2">
          <%= form_for [@article, @favourite] do |f|  %>
@@ -69,8 +62,6 @@
        </div>
       <% end %>
    </div>
+   </div>
+   <% end %>
  </div>
-</div>
-
-
-  <% end %> -->
