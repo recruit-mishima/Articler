@@ -6,7 +6,7 @@
    <p class="author"> <%= article.author %>, </<p>
    <span class="date"> <%= article.date %> </span>
     <hr class="inline"></hr>
-    <% if article.favourites.present? %>
+    <% if @current_user_favourites.include?(article.id) %>
 <%= link_to '♡', article_path(article), class: "favourited" %>
       <hr class="next-article"></hr>
     <% else %>

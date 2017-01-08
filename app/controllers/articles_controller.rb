@@ -17,7 +17,8 @@ class ArticlesController < ApplicationController
 
 
   def search
-    @articles = Article.search(:title_and_author_cont => " ").result
+    @articles = Article.search(:title_and_author_cont => ['articles']).result
+    @current_user_favourites = current_user.favourites.pluck(:article_id)
   end
 
   private

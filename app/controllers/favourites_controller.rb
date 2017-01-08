@@ -1,4 +1,4 @@
-class FavouritesController < ApplicationController
+  class FavouritesController < ApplicationController
 
   def create
     article_id = params[:article_id]

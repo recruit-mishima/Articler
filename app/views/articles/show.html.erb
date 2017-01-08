@@ -1,35 +1,34 @@
 <div class="article">
  <div class="brief-info">
-   <span class="title-show"> "<%= @article.title %>" </span>
-   <span class="author-show"> by <%= @article.author %>, </span>
+   <span class="title-show"> "<%= @article.title %>" </span> <br />
+   <span class="author-show"> <%= @article.author %>, </span>
    <span class="date-show"> <%= @article.date %> </span>
-   </div>
-   <span class="just-title"> Abstract </span>
-   <span class="comment"> <i class="fa fa-comment fa-2x open-modal" style="color: black"></i></span>
+    <hr class="inline"></hr>
+ </div>
+ <div class="abstract-title clearfix">
+   <p class="just-title"> Abstract </p>
+   <p class="comment"> <i class="fa fa-pencil-square-o fa-2x open-modal" style="color: black"></i></p>
     <div class="abstract">
       <%= @article.abstract %>
     </div>
-</div>
-<div class="cover-background">
+ </div>
 </div>
 
  <div class="modal">
   <% if @myfavourite %>
-    <div class="modal-content1">
-      <div class="modal-header1">
-       <h3>
+    <div class="modal-content clearfix">
+      <div class="modal-header">
         Comment
-       </h3>
-       </div>
-       <div>
-         <p class="close-modal"> × close </p>
-       </div>
+      </div>
+      <div class=close-button>
+        <i class="fa fa-window-close-o close-modal fa-2x"></i>
+      </div>
 
-      <div class="modal-body1">
+      <div class="modal-body">
        <%= form_for [@article, @myfavourite] do |f|  %>
           <%= f.text_area :comment, placeholder: '' %>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer clearfix">
          <div class="update-click">
          <%= f.submit 'Update' %>
          </div>
@@ -41,8 +40,8 @@
     </div>
 
       <% else %>
-    <div class="modal-content2">
-        <div class="modal-header2">
+    <div class="modal-content">
+        <div class="modal-header">
          <h3>
           Comment
          </h3>
@@ -50,7 +49,7 @@
         <<div>
           <p class="close-modal"> × close </p>
         </div>
-        <div class="modal-form2">
+        <div class="modal-form">
          <%= form_for [@article, @favourite] do |f|  %>
            <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
         </div>
