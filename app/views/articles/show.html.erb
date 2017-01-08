@@ -1,20 +1,17 @@
-
-<!-- puts Article.find(params[:id]) -->
-
-    <%= @article.title %>
-    <%= @article.author %>
-    <%= @article.date %>
-    <br/>
-   <h3>
-    Abstract
-   </h3>
-   <div class="article-abstract">
+<div class="article">
+ <div class="brief-info">
+   <span class="title-show"> "<%= @article.title %>" </span>
+   <span class="author-show"> by <%= @article.author %>, </span>
+   <span class="date-show"> <%= @article.date %> </span>
+   </div>
+   <span class="just-title"> Abstract </span>
+   <span class="comment"> <i class="fa fa-comment fa-2x open-modal" style="color: black"></i></span>
+    <div class="abstract">
       <%= @article.abstract %>
     </div>
-
+</div>
 <div class="cover-background">
 </div>
-      <p class="open-modal" >hello dialog</p>
 
  <div class="modal">
   <% if @myfavourite %>
@@ -65,3 +62,4 @@
    </div>
    <% end %>
  </div>
+</div>

@@ -163,6 +163,8 @@ input.search {
 
 /*
 search.html
+&
+show.html
 */
 
 .article {
@@ -170,6 +172,7 @@ search.html
 }
 
 .title {
+  display: block;
   font-style: verdana;
   margin-left: 12px;
   margin-right: 12px;
@@ -215,6 +218,48 @@ search.html
 /*
 show.html
 */
+.brief-info {
+  margin-left: 13px;
+  margin-right: 13px;
+}
+.title-show {
+  font-style: verdana;
+  font-size: 17px;
+  color: #5C5959;
+}
+
+.author-show {
+  font-style: verdana;
+  font-size: 17px;
+  color: #5C5959;
+}
+
+.date-show {
+  font-style: verdana;
+  font-size: 17px;
+  color: #5C5959;
+}
+
+.just-title {
+  color: #626262;
+  font-size: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+
+.abstract {
+  color: #5F5A5A;
+  font-size: 20px;
+  margin-top: 13px;
+  margin-left: 13px;
+  margin-right: 13px;
+  line-height: 24px;
+}
+
+.comment > i:before {
+  color: #5F5A5A;
+  margin-left: 150px;
+}
 
 .cover-background {
   position:  absolute;

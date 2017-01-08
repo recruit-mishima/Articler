@@ -1,8 +1,13 @@
-<ul>
+<div class="article">
   <% @favourites.each do |favourite| %>
-   <ol>
-    <%= favourite.id %>
-    <%= link_to "#{favourite.article.title}", "/articles/#{favourite.article.id}" %>
-   </ol>
-  <% end %>
-</ul>
+ <ol>
+  <li>
+    <%= link_to "#{favourite.article.title}", "/articles/#{favourite.article.id}", class: "title" %>
+     <hr class="inline"></hr>
+     <p class="author"> <%= favourite.article.author %>, </<p>
+     <span class="date"> <%= favourite.article.date %> </span>
+     <hr class="next-article"></hr>
+      <% end %>
+  </li>
+ </ol>
+</div>
