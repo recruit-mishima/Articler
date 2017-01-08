@@ -155,12 +155,10 @@ input.search {
   border:none;
 }
 
-}
 .blank {
   width: 100vw;
   height: 350px;
   background-color: white;
-
 }
 
 /*
@@ -295,7 +293,7 @@ show.html
   float:left;
 }
 
-.close-button  {
+.close-button {
   margin-right: 50px;
   float: right;
 }
