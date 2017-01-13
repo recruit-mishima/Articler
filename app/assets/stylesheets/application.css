@@ -36,13 +36,14 @@
   height: 63px;
  }
 
- .home{
+ .search-button{
   width: 20vw;
   height: 63px;
   line-height: 63px;
   text-align: center;
-  float: left;
   font-size: 9px;
+  float: right;
+
  }
 
 
@@ -65,13 +66,59 @@ i:before {
   float: left;
  }
 
+.open-bar {
+  height: 63px;
+  margin-right: 25px;
+  line-height: 63px;
+  float: right;
+}
+
+.bar {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  top: 63px;
+  right: 70px;
+  opacity: 1.0;
+  height: 63px;
+  margin-right: 25px;
+  line-height: 63px;
+  float: right;
+  z-index: 2;
+  display: none;
+}
+/*
+.open-session {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  top: 63px;
+  right: 70px;
+  opacity: 1.0;
+  
+  display:none;
+}*/
+
+.closed-session {
+  position: absolute;
+  width: 375px;
+  height: 1685px;
+  background: #ddd;
+  left: 0px;
+  opacity: 0.8;
+  top: 0px;
+  margin: 0 auto;
+  z-index: 1;
+
+}
  .user_nav {
   width: 20vw;
   height: 63px;
   line-height: 50px;
   font-size: 13px;
   text-align: center;
-  float: right;
  }
 
  .grid-6 {
@@ -121,11 +168,11 @@ hr {
   decoration: none;
 }
 
-.keyword-form {
+.search-form {
   margin-top: 10px;
   margin-left: 30px;
   width: 100vw;
-  height: 200vw;
+  height: 60vw;
 }
 
 .form {
@@ -275,6 +322,7 @@ show.html
   display:none;
 }
 
+
 .comment > i:before {
   color: #5F5A5A;
   margin-left: 138px;
@@ -287,14 +335,15 @@ show.html
 
 .modal-header {
   margin-left: 30px;
-  margin-top:19px;
-  font-size: 30px;
-  font-style: verdana;
+  margin-top: 100px;
+  font-size: 22px;
+  font-family: "CenturyGothic";
   float:left;
 }
 
 .close-button {
-  margin-right: 50px;
+  margin-top: 80px;
+  margin-right: 40px;
   float: right;
 }
 
@@ -302,54 +351,107 @@ show.html
   color: black;
 }
 
+.modal-body {
+  clear: both;
+}
 
 .edit_favourite textarea {
   resize: none;
   cursor: none;
   background-color: white;
-/*  border:black;*/
   border-radius: 6px;
   border-color: black;
   border-width: 3.5px;
   margin-right: 40px;
-  margin-left: 40px;
+  margin-left: 30px;
   height: 70px;
   width: 80vw;
   font-size: 19px;
   opacity: 1.0;
-  font-family: "arial";
+  font-family: "CenturyGothic";
   text-indent: 8px;
 }
 
-.modal-footer
 .update-click {
+  margin-top: 20px;
+  text-decoration: none;
   float: left;
 }
 
 .update-click input {
   margin-left: 80px;
   font-size: 20px;
-  font-family: "arial";
+  font-family: "CenturyGothic";
+  text-decoration: none;
+  color: black;
+  border: solid;
+  border-radius: 6px;
 }
 
 .delete-click {
   float: left;
-  margin-top: 4px;
+  margin-top: 26.5px;
+  text-decoration: none;
 }
+
 .delete-click a {
   margin-top: 50px;
   margin-left: 50px;
+  padding: 3.5px;
   font-size: 20px;
-  font-family: "arial";
+  font-family: "CenturyGothic";
+  text-decoration: none;
+  color: black;
+  border: solid;
+  border-radius: 6px;
 }
 
-.modal-body {
-  clear: both;
+.new_favourite textarea {
+  resize: none;
+  cursor: none;
+  background-color: white;
+  border-radius: 6px;
+  border-color: black;
+  border-width: 3.5px;
+  margin-right: 40px;
+  margin-left: 30px;
+  height: 70px;
+  width: 80vw;
+  font-size: 19px;
+  opacity: 1.0;
+  font-family: "CenturyGothic";
+  text-indent: 8px;
 }
+
+.create-click {
+  width: 25px;
+  height: 25px;
+  margin-left: 280px;
+  margin-right: 60px;
+  border: solid;
+  border-width: 3px;
+  border-radius: 6px;
+  font-family: "CenturyGothic";
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.create-click input{
+  font-size: 20px;
+  margin: 0 auto;
+  font-family: "CenturyGothic";
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+
 
 /*
-sign_up&log_in
+log_in
 */
+
 .border {
   top: 0;
   width: 100vw;
@@ -364,9 +466,13 @@ sign_up&log_in
   height: 100vw;
 }
 
+.heading-log_in{
+  padding-top: 30px;
+
+}
+
 h2 {
-  position: absolute;
-  top: 80px;
+  top: 45px;
   margin-left: 30px;
   font-size: 30px;
   font-family: "CenturyGothic";
@@ -377,6 +483,58 @@ h2 {
   background-color: #2EEF5F;
 }
 
+.field-log_in input {
+  margin-top: 15px;
+  margin-right: 50px;
+  margin-left: 50px;
+  width: 70vw;
+  height: 35px;
+  size: 90px;
+  border-radius: 4px;
+  border-color: #2E2E2E;
+  background-color: #ECEBEB;
+  border-width: 2px;
+  font-size: 20px;
+}
+
+.field-log_in label {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 42px;
+  font-family: "CenturyGothic";
+  font-size: 25px;
+  color: white;
+}
+
+#email{
+  margin-top: 0px;
+}
+.field-remember_me input {
+
+  margin-right: 45px;
+  margin-left: 45px;
+  width: 18vw;
+  height: 18px;
+  size: 70px;
+  border-radius: 4px;
+  border-color: #2E2E2E;
+  background-color: #white;
+  border-width: 2px;
+  font-size: 20px;
+   font-color: white;
+  font-family: "CenturyGothic";
+}
+
+
+.field-remember_me label {
+  display: inline-block;
+  margin-left: 50px;
+  font-size: 16px;
+  margin-top: 15px;
+  color: white;
+  font-family: "CenturyGothic";
+}
+/*
 .email input {
   margin-top: 90px;
   margin-right: 50px;
@@ -403,60 +561,21 @@ h2 {
   background-color: #ECEBEB;
   border-width: 2px;
   font-size: 20px;
-}
+}*/
 
-.remenber_me input {
-  margin-top: 20px;
-  margin-right: 55px;
-  margin-left: 45px;
-  width: 20vw;
-  height: 20px;
-  size: 70px;
-  border-radius: 4px;
-  border-color: #2E2E2E;
-  background-color: #white;
-  border-width: 2px;
-  font-size: 20px;
-}
 
-.field label {
-  top: 90px;
-  margin-left: 42px;
-  font-family: "CenturyGothic";
-  font-size: 25px;
-  color: white;
-}
-
-.email label {
- position: absolute;
- top: 135px;
-
-}
-
-.password label {
- position: absolute;
- top: 240px; 
-}
-
-.remenber_me label {
-  position: absolute;
- top: 330px;
- font-size: 20px;
-  display: block;
-}
 
 .actions {
-  margin-top: 50px;
   width: 100vw;
   height: 45px;
   background-color: #333333;
   border:none;
   size: 45px;
   text-align: center;
+  color: white;
 }
 
 .actions input {
-  color: white;
   font-size: 18px;
   line-height: 45px;
   height: 45px;
@@ -468,8 +587,16 @@ h2 {
   background-color: #2EEF5F;
 }
 
-.username-new input {
-  margin-top: 70px;
+/*
+Sing_up
+*/
+
+.heading-sign_up {
+  margin-bottom: 30px;
+}
+
+.field input {
+  margin-bottom: 15px;
   margin-right: 50px;
   margin-left: 50px;
   width: 70vw;
@@ -480,106 +607,46 @@ h2 {
   background-color: #ECEBEB;
   border-width: 2px;
   font-size: 20px;
+  color: white;
+  clear: both;
 }
 
-
-
-.usename-new label {
- position: relative;
- top: 150px;
-}
-
-.email-new input{
- margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
-  width: 70vw;
-  height: 35px;
-  size: 90px;
-  border-radius: 4px;
-  border-color: #2E2E2E;
-  background-color: #ECEBEB;
-  border-width: 2px;
+.field label {
+  display: inline-block;
+  font-family: "CenturyGothic";
   font-size: 20px;
+  margin-bottom: 7px;
+  color: white;
+  margin-left: 30px;
+  clear: both;
 }
 
-.email-new label {
- position: relative;
- top: 135px;
+em {
+ display: inline-block;
+  font-family: "CenturyGothic";
+  font-size: 13px;
+  margin-bottom: 7px;
+  color: white; 
 }
 
-.password-new input{
- margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
-  width: 70vw;
-  height: 35px;
-  size: 90px;
-  border-radius: 4px;
-  border-color: #2E2E2E;
-  background-color: #ECEBEB;
-  border-width: 2px;
-  font-size: 20px;
+.form-control {
+  padding-top: 43px;
 }
 
-.password-new label {
- position: absolute;
- top: 135px;
-}
 
-.password_confirmation-new input{
- margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
-  width: 70vw;
-  height: 35px;
-  size: 90px;
-  border-radius: 4px;
-  border-color: #2E2E2E;
-  background-color: #ECEBEB;
-  border-width: 2px;
-  font-size: 20px;
-}
-
-.password_confirmation-new label {
- position: absolute;
- top: 135px;
-}
-
-.actions-new {
- margin-top: 50px;
+.actions {
   width: 100vw;
   height: 45px;
   background-color: #333333;
   border:none;
   size: 45px;
   text-align: center;
+  color: white;
 }
 
-.actions-new input {
+.actions input {
   color: white;
-  font-size: 40px;
+  font-size: 18px;
   line-height: 5px;
 }
 
-.field input {
-  margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
-  width: 70vw;
-  height: 35px;
-  size: 90px;
-  border-radius: 4px;
-  border-color: #2E2E2E;
-  background-color: #ECEBEB;
-  border-width: 2px;
-  font-size: 20px;
-}
-
-.form-sign_up label {
-  display: inline-block;
-  font-family: "arial";
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
-}

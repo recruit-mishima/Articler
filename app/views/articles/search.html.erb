@@ -1,18 +1,22 @@
 <div class="article">
-<% if @articles.present? %>
-  <% @articles.each do |article| %>
-   <p class="title"> "<%= article.title %>" </p>
-   <hr class="inline"></hr>
-   <p class="author"> <%= article.author %>, </<p>
-   <span class="date"> <%= article.date %> </span>
-    <hr class="inline"></hr>
-    <% if @current_user_favourites.include?(article.id) %>
-<%= link_to '♡', article_path(article), class: "favourited" %>
-      <hr class="next-article"></hr>
-    <% else %>
-      <%= link_to '♡', article_path(article), class: "nonfavourited" %>
-      <hr class="next-article"></hr>
+  <% if @articles.present? %>
+    <% @articles.each do |article| %>
+      <p class="title"> "<%= article.title %>" </p>
+      <hr class="inline"></hr>
+      <p class="author"> <%= article.author %>, </<p>
+      <span class="date"> <%= article.date %> </span>
+      <hr class="inline"></hr>
+      <% if @current_user_favourites.include?(article.id) %>
+        <%= link_to '♡', article_path(article), class: "favourited" %>
+        <hr class="next-article"></hr>
+      <% else %>
+        <%= link_to '♡', article_path(article), class: "nonfavourited" %>
+        <hr class="next-article"></hr>
+      <% end %>
     <% end %>
+  <% else %>
+    <div class="non-result">
+      Could not find any articles!
+    </div>
   <% end %>
-<% end %>
 </div>

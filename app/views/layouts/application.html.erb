@@ -10,29 +10,40 @@
  <body>
   <header class="header">
     <div class="header_bar clearfix">
-      <div class="home">
-        <a href="/"><i class="fa fa-home fa-5x" aria-hidden="true"></i></a>
-      </div>
       <div class="heading">Articler</div>
+  
+  <div class="open-bar">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+
+  <div class="bar">
+      <i class="fa fa-bars" aria-hidden="true"></i>
       <% if user_signed_in? %>
-      <div class="user_nav grid-6">
+         <div class="user_nav grid-6">
     <!--   <span><%= current_user.username %> -->
-         <ul class="user__info">
-           <li>
-             <a href="/users/<%= current_user.id %>">My page</a>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <ul class="user__info">
+            <li>
+              <a href="/users/<%= current_user.id %>">My page</a>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
            </li>
           </ul>
      <!--  </span> -->
 <!--           <a class="search" href="/top">Search Articles</a> -->
-        </div>
-      <% else %>
-        <div class="grid-6">
-          <%= link_to "Log In",new_user_session_path, class: 'post' %>
-          <%= link_to "New Account", new_user_registration_path, class: 'post' %>
-        </div>
-      <% end %>
+         </div>
+           <% else %>
+         <div class="grid-6">
+           <%= link_to "Log In",new_user_session_path, class: 'post' %>
+           <%= link_to "New Account", new_user_registration_path, class: 'post' %>
+         </div>
+        <% end %>
+  </div>
+
+      
+
+    <div class="search-button">
+      <a href="/"><i class="fa fa-search fa-3x" aria-hidden="true"></i></a>
     </div>
+  </div>
   </header>
   <%= yield %>
  </body>

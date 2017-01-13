@@ -6,31 +6,24 @@
    </h3>
    <hr></hr>
   </div>
-  <div class="keyword-form">
+  <div class="search-form">
   <ul>
     <%= form_tag('/articles/search', method: :get ) do %>
     <li>
-      <input class="form" placeholder="Keyword1" type="text" name="title">
+      <%= text_field_tag "keywords[]", "" ,class: "form" %>
       </li>
-      <li>
-      <input class="form" placeholder="Keyword2" type="text" name="title">
+       <li>
+      <%= text_field_tag  "keywords[]", "" ,class: "form" %>
       </li>
       </ul>
   </div>
-</div>
+  </div>
+   <div class="date-range">
+    <%= text_field_tag "start_year", "", class: "form-year" %> ~
+    <%= text_field_tag "end_year", "", class: "form-year" %>
+  </div>
 
-
-
-      <!-- <div>
-        <input placeholder="Keyword3" type="text" name="title"> </input>
-      </div>
-    <h2>
-      Date
-    </h2>
-      <div>
-        <input placeholder="Year1" type="text"></input>~<input placeholder="Year2" type="text"></input>
-      </div> -->
-<input class="search" type="submit" value="Search">
-    <% end %>
+    <input class="search" type="submit" value="Search">
+       <% end %>
 <div class="blank">
 </div>

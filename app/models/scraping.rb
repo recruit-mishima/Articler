@@ -4,10 +4,11 @@ class Scraping
     agent = Mechanize.new
     current_page = agent.get("http://www.jair.org/contents.html")
     elements = current_page.search('li > a')
+    elements = elements[0..3]
     elements.each do |ele|
       links << ele.get_attribute('href')
     end
-    links.each do |link|
+    links .each do |link|
       volumes_urls('http://www.jair.org/' + link)
     end
   end
@@ -38,9 +39,9 @@ class Scraping
       begin
         article = Article.create(title: title, author: author, date: date, abstract: abstract)
         keywords = AlchemyAPI.new.keywords("text", "#{article.abstract}")
-        keywords["keywords"].each do |keyword|
-          Keyword.create(keyword: keyword["text"], article_id: article.id)
-        end
+        # keywords["keywords"].each do |keyword|
+          Keyword.create(keyword: keywords["keywords"][0]["text"], article_id: article.id)
+        # end
       rescue
     end
   end

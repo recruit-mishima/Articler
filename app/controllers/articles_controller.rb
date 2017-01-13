@@ -9,16 +9,20 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @favourite = Favourite.new(article_id: @article.id)
     @myfavourite = Favourite.find_by(article_id: @article.id, user_id: @user.id)
+    @keyword = Keyword.find_by(article_id: params[:id])
   end
 
   def edit
     @comment = Comment.find(params[:id])
   end
 
-
   def search
-    @articles = Article.search(:title_and_author_cont => ['articles']).result
+    @articles = Article.search(:title_or_author_cont_any => params[:keywords]).result
+    @articles = @articles.where(date: params[:start_year]..params[:end_year])
     @current_user_favourites = current_user.favourites.pluck(:article_id)
+    session[:keywords] = params[:keywords]
+    session[:start_year] = params[:start_year]
+    session[:end_year] = params[:end_year]
   end
 
   private

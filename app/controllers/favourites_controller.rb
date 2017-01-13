@@ -3,7 +3,7 @@
   def create
     article_id = params[:article_id]
     Favourite.create(favourite_params)
-    redirect_to search_articles_path
+    redirect_to search_articles_path(keywords: session[:keywords], start_year: session[:start_year], end_year: session[:end_year])
   end
 
   def destroy

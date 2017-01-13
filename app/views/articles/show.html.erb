@@ -10,55 +10,53 @@
    <p class="comment"> <i class="fa fa-pencil-square-o fa-2x open-modal" style="color: black"></i></p>
     <div class="abstract">
       <%= @article.abstract %>
+      <%= @keyword %>
     </div>
  </div>
 </div>
 
- <div class="modal">
-  <% if @myfavourite %>
-    <div class="modal-content clearfix">
-      <div class="modal-header">
-        Comment
-      </div>
-      <div class=close-button>
-        <i class="fa fa-window-close-o close-modal fa-2x"></i>
-      </div>
-
-      <div class="modal-body">
-       <%= form_for [@article, @myfavourite] do |f|  %>
-          <%= f.text_area :comment, placeholder: '' %>
-      </div>
-      <div class="modal-footer clearfix">
-         <div class="update-click">
-         <%= f.submit 'Update' %>
-         </div>
-       <% end %>
-        <div class="delete-click">
-         <%= link_to "Delete", article_favourite_path(article_id: @article.id, id: @myfavourite.id), method: :delete %>
-        </div>
-      </div>
-    </div>
-
-      <% else %>
-    <div class="modal-content">
+  <div class="modal">
+    <% if @myfavourite %>
+      <div class="modal-content clearfix">
         <div class="modal-header">
-         <h3>
           Comment
-         </h3>
         </div>
-        <<div>
-          <p class="close-modal"> × close </p>
+        <div class=close-button>
+          <i class="fa fa-window-close-o close-modal fa-2x"></i>
         </div>
-        <div class="modal-form">
-         <%= form_for [@article, @favourite] do |f|  %>
-           <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
+        <div class="modal-body">
+          <%= form_for [@article, @myfavourite] do |f|  %>
+          <%= f.text_area :comment, placeholder: '' %>
         </div>
-         <div class="create-click">
-         <%= f.submit '♡' %>
-       </div>
-      <% end %>
+        <div class="modal-footer clearfix">
+          <div class="update-click">
+            <%= f.submit 'Update' %>
+          </div>
+          <% end %>
+          <div class="delete-click">
+            <%= link_to "Delete", article_favourite_path(article_id: @article.id, id: @myfavourite.id), method: :delete %>
+          </div>
+        </div>
+      </div>
+
+    <% else %>
+      <div class="modal-content clearfix">
+        <div class="modal-header">
+          Comment
+        </div>
+        <div class=close-button>
+          <i class="fa fa-window-close-o close-modal fa-2x"></i>
+        </div>
+        <div class="modal-body">
+          <%= form_for [@article, @favourite] do |f|  %>
+          <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
+        </div>
+        <div class="create-click">
+          <%= f.submit '♡' %>
+        </div>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
    </div>
-   </div>
-   <% end %>
- </div>
-</div>
+  </div>
