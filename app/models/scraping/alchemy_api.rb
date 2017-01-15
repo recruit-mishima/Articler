@@ -19,7 +19,7 @@
 # require 'uri'
 # require 'json'
 
-class AlchemyAPI
+class Scraping::AlchemyAPI
 
   #Setup the endpoints
   @@ENDPOINTS = {}

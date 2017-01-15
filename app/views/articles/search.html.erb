@@ -7,10 +7,10 @@
       <span class="date"> <%= article.date %> </span>
       <hr class="inline"></hr>
       <% if @current_user_favourites.include?(article.id) %>
-        <%= link_to '♡', article_path(article), class: "favourited" %>
+        <%= link_to content_tag('i', nil, class: 'fa fa-heart'), article_path(article), class: "favourited" %>
         <hr class="next-article"></hr>
       <% else %>
-        <%= link_to '♡', article_path(article), class: "nonfavourited" %>
+        <%= link_to content_tag('i', nil,class: 'fa fa-heart-o'), article_path(article), class: "nonfavourited" %>
         <hr class="next-article"></hr>
       <% end %>
     <% end %>
@@ -19,4 +19,5 @@
       Could not find any articles!
     </div>
   <% end %>
+  <%= paginate(@articles) %>
 </div>

@@ -1,4 +1,4 @@
-class Scraping
+class Scraping::Scraping
   def self.contents_urls
     links = []
     agent = Mechanize.new
@@ -38,6 +38,8 @@ class Scraping
      abstract = abstract.scrub('')
       begin
         article = Article.create(title: title, author: author, date: date, abstract: abstract)
+        keywords = Scraping::AlchemyAPI.new.keywords("text", "#{article.abstract}")
+          Keyword.create(keyword: keywords["keywords"][0]["text"], article_id: article.id)
       rescue
     end
   end

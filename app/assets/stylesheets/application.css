@@ -22,9 +22,15 @@
 
  header {
   height: 63px;
-  background-color: #2EEF5F;
+  background-color: #5BF581;
  }
 
+input[type=submit], button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: inherit;
+}
 
  .clearfix:after{
   content: "";
@@ -46,14 +52,12 @@
 
  }
 
-
 i:before {
   width: 20vw;
   height: 63px;
   line-height: 71px;
   color: white;
  }
-
 
  .heading{
   width: 60vw;
@@ -75,36 +79,20 @@ i:before {
 
 .bar {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  height: 60px;
   background: white;
-  top: 63px;
-  right: 70px;
+  top: 63px; right: 0px;
   opacity: 1.0;
   height: 63px;
-  margin-right: 25px;
   line-height: 63px;
-  float: right;
   z-index: 2;
   display: none;
 }
-/*
-.open-session {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: white;
-  top: 63px;
-  right: 70px;
-  opacity: 1.0;
-  
-  display:none;
-}*/
 
 .closed-session {
   position: absolute;
   width: 375px;
-  height: 1685px;
+  height: 100%;
   background: #ddd;
   left: 0px;
   opacity: 0.8;
@@ -114,25 +102,72 @@ i:before {
 
 }
  .user_nav {
-  width: 20vw;
-  height: 63px;
+  position: absolute;
+  top: 0px; right: 0px;
+  width: 90vw;
+  height: 60px;
   line-height: 50px;
   font-size: 13px;
   text-align: center;
+  border: solid ;
+  background-color: white;
  }
 
  .grid-6 {
-  width: 20vw;
-  height: 63px;
-  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 11px;
+  height: 60px;
   font-size: 13px;
   line-height: 50px;
   text-align: center;
+  background-color: white;
+  box-shadow: 0 0 1px black inset;
  }
 
- ul {
- width: 20vw;
- height: 63px;
+.user_info {
+  top: 63px;
+  right: 0px;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  font-family: "CenturyGothic";
+}
+
+.sign_out {
+  top: 93px;
+  right: 0px;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  font-family: "CenturyGothic";
+}
+
+.log_in {
+  top: 63px;
+  right: 0px;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  font-family: "CenturyGothic";
+}
+
+.new_account {
+  top: 93px;
+  right: 0px;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  font-family: "CenturyGothic";
 }
 
 /* index.html
@@ -140,16 +175,16 @@ i:before {
 
 .content1 {
   width: 100vw;
-  height: 230px;
+  height: 260px;
   background-color: white;
   margin-top:0;
 }
 
 .heading-index {
-  width: 100vw;
+  width: 80%;
   height: 60px;
   margin-top: 10px;
-  margin-left: 25px;
+  margin-left: 10%;
 }
 
 h3 {
@@ -157,36 +192,81 @@ h3 {
   left: 45px;
   margin:0px;
   line-height: 50px;
-  color: #848484;
+  color: black;
+  font-family: "CenturyGothic";
 }
 
 hr {
   top: 0;
-  width: 100vw;
+  width: 100%;
   border-top: 1px solid #bbb;
   border-bottom: 1px solid #fff;
   decoration: none;
 }
 
 .search-form {
-  margin-top: 10px;
-  margin-left: 30px;
-  width: 100vw;
-  height: 60vw;
+  margin-top: 30px;
+  margin-left: 10%;
+  width: 80%;
+  height: 80vw;
 }
 
-.form {
+.semi-header {
+  margin-top: 15px;
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-color: black;
+  font-family: "CenturyGothic";
+}
+
+.keyword-form {
   width: 250px;
   height: 40px;
   left: 30px;
   margin-top: 15px;
   margin-bottom: 15px;
+  margin-right: 30px;
+  margin-left: 30px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid #7D7D7D;
   border-radius: 4px;
-  border-color: black;
-  background-color: #DFDFDF;
+  background-color: #FAFAFA;
   font-size: 18px;
+}
+
+.date-range {
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 15px;
+}
+.year-form {
+  width: 30%;
+  height: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10%;
+  box-sizing: border-box;
+  border: 1px solid #7D7D7D;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+  font-size: 18px;
+}
+
+.year-form-right {
+  margin-left: 0;
+}
+
+.between-years {
+  width: 20%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 0px;
+  margin-left: 0px;
+  font-size: 40px;
+  text-align: center;
+  display: inline-block;
 }
 
 li {
@@ -202,20 +282,8 @@ input.search {
   border:none;
 }
 
-.blank {
-  width: 100vw;
-  height: 350px;
-  background-color: white;
-}
-
-/*
-search.html
-&
-show.html
-*/
-
 .article {
-  margin-top: 12px
+  padding-top: 15px;
 }
 
 .title {
@@ -249,17 +317,21 @@ show.html
 
 .next-article {
   width: 100vw;
-  border-width: 4.75px;
+  border-width: 2.75px;
+  border-left: none;
+  border-right: none;
   border-color: #E8E8E8;
-  border: solid #E8E8E8;
 }
 
-.favourited {
+.favourited, .nonfavourited {
   margin-left: 187.5px;
-  color: pink;
+  color: #FF6991;
+  text-decoration: none;
 }
-.nonfavourited {
-  margin-left: 187.5px;
+
+.favourited i:before, .nonfavourited i:before {
+  line-height: initial;
+  color: inherit;
 }
 
 /*
@@ -307,25 +379,29 @@ show.html
   line-height: 28px;
 }
 
-
+.important-words {
+  width: 100vw;
+  color: #5F5A5A;
+  font-size: 14px;
+  margin-left: 40px;
+}
 
 .modal {
-  position: absolute;
-  width: 375px;
-  height: 1685px;
-  background: #ddd;
+  position: fixed;
+  width: 100%;
+  height:100%;
+  background-color: rgba(255,255,255,0.3);
   left: 0px;
-  opacity: 0.8;
   top: 0px;
   margin: 0 auto;
   z-index: 1;
   display:none;
+  -webkit-backdrop-filter: blur(7px);
 }
-
 
 .comment > i:before {
   color: #5F5A5A;
-  margin-left: 138px;
+  margin-left: 150px;
   float: left;
 }
 
@@ -338,13 +414,16 @@ show.html
   margin-top: 100px;
   font-size: 22px;
   font-family: "CenturyGothic";
+  font-weight: bold;
   float:left;
+  color: block;
 }
 
 .close-button {
-  margin-top: 80px;
-  margin-right: 40px;
+  margin-top: 74px;
+  margin-right: 70px;
   float: right;
+  color: black;
 }
 
 .close-button i:before{
@@ -386,11 +465,13 @@ show.html
   color: black;
   border: solid;
   border-radius: 6px;
+  background-color: white;
 }
 
 .delete-click {
   float: left;
-  margin-top: 26.5px;
+  margin-top: 28.7px;
+  margin-left: 10px;
   text-decoration: none;
 }
 
@@ -404,6 +485,7 @@ show.html
   color: black;
   border: solid;
   border-radius: 6px;
+  background-color: white;
 }
 
 .new_favourite textarea {
@@ -426,27 +508,15 @@ show.html
 .create-click {
   width: 25px;
   height: 25px;
-  margin-left: 280px;
-  margin-right: 60px;
-  border: solid;
-  border-width: 3px;
-  border-radius: 6px;
-  font-family: "CenturyGothic";
+  margin-left: 273px;
   text-decoration: none;
   font-weight: bold;
 }
 
-
-.create-click input{
-  font-size: 20px;
-  margin: 0 auto;
-  font-family: "CenturyGothic";
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
+.create-click i:before{
+  color:#FF6991;
+  opacity: 3.0;
 }
-
-
 
 /*
 log_in
@@ -457,18 +527,19 @@ log_in
   width: 100vw;
   border-width: 1px;
   border-color: #E8E8E8;
+  border-left: none;
+  border-right: none;
   margin-top: 0;
   margin-bottom: 0;
 }
 .contents {
-  background-color: #2EEF5F;
+  background-color: #5BF581;
   width: 100%;
   height: 100vw;
 }
 
 .heading-log_in{
   padding-top: 30px;
-
 }
 
 h2 {
@@ -480,7 +551,8 @@ h2 {
 }
 
 .field{
-  background-color: #2EEF5F;
+  background-color: #5BF581;
+  color: white;
 }
 
 .field-log_in input {
@@ -495,6 +567,7 @@ h2 {
   background-color: #ECEBEB;
   border-width: 2px;
   font-size: 20px;
+  color: black;
 }
 
 .field-log_in label {
@@ -509,8 +582,8 @@ h2 {
 #email{
   margin-top: 0px;
 }
-.field-remember_me input {
 
+.field-remember_me input {
   margin-right: 45px;
   margin-left: 45px;
   width: 18vw;
@@ -521,10 +594,9 @@ h2 {
   background-color: #white;
   border-width: 2px;
   font-size: 20px;
-   font-color: white;
+  font-color: white;
   font-family: "CenturyGothic";
 }
-
 
 .field-remember_me label {
   display: inline-block;
@@ -534,36 +606,6 @@ h2 {
   color: white;
   font-family: "CenturyGothic";
 }
-/*
-.email input {
-  margin-top: 90px;
-  margin-right: 50px;
-  margin-left: 50px;
-  width: 70vw;
-  height: 35px;
-  size: 90px;
-  border-radius: 4px;
-  border-color: #2E2E2E;
-  background-color: #ECEBEB;
-  border-width: 2px;
-  font-size: 20px;
-}
-
-.password input {
-  margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
-  width: 70vw;
-  height: 35px;
-  size: 90px;
-  border-radius: 4px;
-  border-color: #2E2E2E;
-  background-color: #ECEBEB;
-  border-width: 2px;
-  font-size: 20px;
-}*/
-
-
 
 .actions {
   width: 100vw;
@@ -582,9 +624,9 @@ h2 {
 }
 
 .bottom-log-in {
-  width: 375px;
-  height: 500px;
-  background-color: #2EEF5F;
+  width: 100%;
+  height: 209px;
+  background-color: #5BF581;
 }
 
 /*
@@ -607,7 +649,7 @@ Sing_up
   background-color: #ECEBEB;
   border-width: 2px;
   font-size: 20px;
-  color: white;
+  color: black;
   clear: both;
 }
 
@@ -630,13 +672,13 @@ em {
 }
 
 .form-control {
-  padding-top: 43px;
+  padding-top: 30px;
 }
-
 
 .actions {
   width: 100vw;
   height: 45px;
+  margin-top: 10px;
   background-color: #333333;
   border:none;
   size: 45px;
@@ -650,3 +692,12 @@ em {
   line-height: 5px;
 }
 
+.new_user {
+  background-color: #5BF581;
+}
+
+.bottom-sign-up {
+  width: 100%;
+  height: 125px;
+  background-color: #5BF581;
+}

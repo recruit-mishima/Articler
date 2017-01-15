@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :search]
+  before_action :authenticate_user!, only: :search
 
   def index
   end
@@ -18,7 +19,7 @@ class ArticlesController < ApplicationController
 
   def search
     @articles = Article.search(:title_or_author_cont_any => params[:keywords]).result
-    @articles = @articles.where(date: params[:start_year]..params[:end_year])
+    @articles = @articles.where(date: params[:start_year]..params[:end_year]).page(params[:page]).per(10)
     @current_user_favourites = current_user.favourites.pluck(:article_id)
     session[:keywords] = params[:keywords]
     session[:start_year] = params[:start_year]
@@ -26,7 +27,6 @@ class ArticlesController < ApplicationController
   end
 
   private
-
   def comment_params
     params.permit(:text)
   end

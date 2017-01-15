@@ -1,61 +1,66 @@
 <div class="article">
- <div class="brief-info">
-   <span class="title-show"> "<%= @article.title %>" </span> <br />
-   <span class="author-show"> <%= @article.author %>, </span>
-   <span class="date-show"> <%= @article.date %> </span>
-    <hr class="inline"></hr>
- </div>
- <div class="abstract-title clearfix">
-   <p class="just-title"> Abstract </p>
-   <p class="comment"> <i class="fa fa-pencil-square-o fa-2x open-modal" style="color: black"></i></p>
-    <div class="abstract">
-      <%= @article.abstract %>
-      <%= @keyword %>
-    </div>
- </div>
+  <div class="brief-info">
+    <span class="title-show"> "<%= @article.title %>" </span> <br />
+    <span class="author-show"> <%= @article.author %>, </span>
+    <span class="date-show"> <%= @article.date %> </span>
+    <hr class="inline">
+  </div>
+  <div class="abstract-title clearfix">
+    <p class="just-title"> Abstract </p>
+    <p class="comment"> <i class="fa fa-pencil-square-o fa-2x open-modal" style="color: black"></i></p>
+  <div class="important-words">
+    # <%= @keyword.keyword %>
+  </div>
+  <div class="abstract">
+    <%= @article.abstract %>
+  </div>
+  </div>
 </div>
 
-  <div class="modal">
-    <% if @myfavourite %>
-      <div class="modal-content clearfix">
-        <div class="modal-header">
-          Comment
+<div class="modal">
+  <% if @myfavourite %>
+    <div class="modal-content clearfix">
+      <div class="modal-header">
+        Comment
+      </div>
+      <div class=close-button>
+        <i class="fa fa-times close-modal fa-2x"></i>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@article, @myfavourite] do |f|  %>
+        <%= f.text_area :comment, placeholder: '' %>
+      </div>
+      <div class="modal-footer clearfix">
+        <div class="update-click">
+          <%= f.submit 'Update' %>
         </div>
-        <div class=close-button>
-          <i class="fa fa-window-close-o close-modal fa-2x"></i>
-        </div>
-        <div class="modal-body">
-          <%= form_for [@article, @myfavourite] do |f|  %>
-          <%= f.text_area :comment, placeholder: '' %>
-        </div>
-        <div class="modal-footer clearfix">
-          <div class="update-click">
-            <%= f.submit 'Update' %>
-          </div>
-          <% end %>
-          <div class="delete-click">
-            <%= link_to "Delete", article_favourite_path(article_id: @article.id, id: @myfavourite.id), method: :delete %>
-          </div>
+        <% end %>
+        <div class="delete-click">
+          <%= link_to "Delete", article_favourite_path(article_id: @article.id, id: @myfavourite.id), method: :delete %>
         </div>
       </div>
-
-    <% else %>
-      <div class="modal-content clearfix">
-        <div class="modal-header">
-          Comment
-        </div>
-        <div class=close-button>
-          <i class="fa fa-window-close-o close-modal fa-2x"></i>
-        </div>
-        <div class="modal-body">
-          <%= form_for [@article, @favourite] do |f|  %>
-          <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
-        </div>
-        <div class="create-click">
-          <%= f.submit '♡' %>
-        </div>
-          <% end %>
+    </div>
+  <% else %>
+    <div class="modal-content clearfix">
+      <div class="modal-header">
+        Comment
       </div>
+      <div class=close-button>
+        <i class="fa fa-times close-modal fa-2x"></i>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@article, @favourite] do |f|  %>
+        <%= f.text_area :comment, placeholder: 'Any Commnt?' %>
+      </div>
+      <div class="create-click">
+        <label>
+          <%= f.submit '', style: 'display: none;' %>
+          <i class="fa fa-heart fa-2x" ></i>
+        </label>
+      </div>
+    </div>
+  <% end %>
+</div>
     </div>
     <% end %>
    </div>
